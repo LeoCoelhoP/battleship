@@ -1,0 +1,28 @@
+body {
+  background-image: url('../img/background.jpg');
+  height: 98svh;
+  width: 98svw;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  animation: fadeInAnimation ease 2s;
+
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+.hidden *,
+.hidden {
+  transition: opacity 2s ease;
+
+  opacity: 0;
+}
+
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

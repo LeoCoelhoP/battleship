@@ -1,8 +1,14 @@
+/* eslint-disable comma-dangle */
+/* eslint-disable class-methods-use-this */
 class OnLoadView {
   #markup;
 
   constructor() {
     this.body = document.querySelector('body');
+  }
+
+  hidGridContainer() {
+    document.querySelector('.grid-container').classList.toggle('hidden');
   }
 
   addOnLoadEventListener(handler) {
@@ -11,12 +17,15 @@ class OnLoadView {
   }
 
   addStartGameEventListener(handler) {
-    const startGame = document.querySelector('.start-game-btn');
-    startGame.addEventListener('click', (e) => {
-      e.preventDefault();
-      if (e.target.parentNode.querySelector('input').value) handler();
+    return new Promise((resolve) => {
+      const startGame = document.querySelector('.start-game-btn');
+
+      startGame.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (e.target.parentNode.querySelector('input').value) handler();
+        resolve(e.target.parentNode.querySelector('input').value);
+      });
     });
-    return this;
   }
 
   render() {

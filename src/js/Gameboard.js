@@ -32,11 +32,11 @@ export default class Gameboard {
         this.#board[initialRowPosition + i][initialColumnPosition + i] === 'sea'
       ) {
         if (alignment) {
-          this.#board[initialRowPosition + i][initialColumnPosition] = ship.id;
+          this.#board[initialRowPosition - i][initialColumnPosition] = ship.id;
         } else {
-          this.#board[initialRowPosition][initialColumnPosition + i] = ship.id;
+          this.#board[initialRowPosition][initialColumnPosition - i] = ship.id;
         }
-      } else throw new Error('Already have a ship there');
+      } else return 'Already have a ship there';
     }
     this.#ships.push(ship);
     return this.#board;

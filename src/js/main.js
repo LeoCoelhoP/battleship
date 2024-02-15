@@ -5,12 +5,14 @@ import Gameboard from './Gameboard';
 import Ship from './Ship';
 import Player from './Player';
 
-import OnLoadController from './controller/OnLoadController';
+import OnLoadController from './controller/Controller';
 import OnLoadView from './view/onLoadView';
 
 import '../css/firstPage.css';
+import '../css/secondPage.css';
 import '../css/style.css';
 
+OnLoadController();
 // const playerGameboard = new Gameboard();
 // const computerGameboard = new Gameboard();
 

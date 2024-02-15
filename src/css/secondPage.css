@@ -1,0 +1,27 @@
+.grid-container {
+  width: fit-content;
+  height: fit-content;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  animation: fadeInAnimationGridContainer ease 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  margin-left: 10%;
+}
+
+.grid-cell {
+  width: 70px;
+  height: 70px;
+  background-color: rgba(0, 0, 0, 0.8);
+
+  border: 1px solid #fff;
+}
+.grid-cell:hover {
+  background-color: red;
+}
+.hover {
+  background-color: red;
+}
